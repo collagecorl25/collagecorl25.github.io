@@ -1,5 +1,75 @@
 <!DOCTYPE html>
-<html>
-<head><title>COLLAGE</title></head>
-<h1>COLLAGE</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="COLLAGE enables task-adaptive multi-feature data retrieval for few-shot imitation learning.">
+  <title>COLLAGE: Adaptive Fusion-based Retrieval for Augmented Policy Learning</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">COLLAGE: Adaptive Fusion-based Retrieval for Augmented Policy Learning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+  <p>
+    In this work, we study the problem of data retrieval for few-shot imitation learning: select data from a large dataset to train a performant policy for a specific task, given only a few target demonstrations. Prior methods retrieve data using a single-feature distance heuristic, assuming that the best demonstrations are those that most closely resemble the target examples in visual, semantic, or motion space. However, this approach captures only a subset of the relevant information and is prone to introducing detrimental demonstrations, e.g., retrieving data from unrelated tasks due to similar scene layouts, or selecting similar motions from tasks with divergent goals.
+  </p>
+  <p>
+    We present <b>COLLAGE</b>, a method for <b>coll</b>ective data <b>ag</b>gr<b>e</b>gation in few-shot imitation learning that uses an adaptive late fusion mechanism to guide the selection of relevant demonstrations based on a task-specific combination of multiple cues. COLLAGE follows a simple, but flexible and efficient data aggregation recipe: it assigns weights to subsets of the dataset that are pre-selected using a single feature (e.g., appearance, shape, or language similarity), based on their task relevance, measured by how well a policy trained on each subset predicts actions in the few target demonstrations. These weights are then used during policy training to perform importance sampling over the aggregated dataset, sampling data more densely or sparsely according to their estimated relevance. This weighted aggregation strategy is general and feature-agnostic, allowing COLLAGE to combine and leverage any number of subsets selected by any retrieval heuristic or method, and to identify which subset provides the most benefit for the target task. In extensive experiments, COLLAGE outperforms state-of-the-art retrieval and multi-task learning approaches, achieving a 5.1% improvement over the best baseline in simulation across 10 tasks, and a 16.6% improvement in the real world across 6 tasks. For our real world experiments, we include data selection from the large-scale, real-world DROID dataset, significantly improving few-shot imitation policy training.
+  </p>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
+        <div class="content has-text-centered">
+          <p><em>Coming soon.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        This website is based on the <a href="https://nerfies.github.io/">Nerfies</a> website template, which is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
