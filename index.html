@@ -36,13 +36,13 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-  <p>
-    In this work, we study the problem of data retrieval for few-shot imitation learning: select data from a large dataset to train a performant policy for a specific task, given only a few target demonstrations. Prior methods retrieve data using a single-feature distance heuristic, assuming that the best demonstrations are those that most closely resemble the target examples in visual, semantic, or motion space. However, this approach captures only a subset of the relevant information and is prone to introducing detrimental demonstrations, e.g., retrieving data from unrelated tasks due to similar scene layouts, or selecting similar motions from tasks with divergent goals.
-  </p>
-  <p>
-    We present <b>COLLAGE</b>, a method for <b>coll</b>ective data <b>ag</b>gr<b>e</b>gation in few-shot imitation learning that uses an adaptive late fusion mechanism to guide the selection of relevant demonstrations based on a task-specific combination of multiple cues. COLLAGE follows a simple, but flexible and efficient data aggregation recipe: it assigns weights to subsets of the dataset that are pre-selected using a single feature (e.g., appearance, shape, or language similarity), based on their task relevance, measured by how well a policy trained on each subset predicts actions in the few target demonstrations. These weights are then used during policy training to perform importance sampling over the aggregated dataset, sampling data more densely or sparsely according to their estimated relevance. This weighted aggregation strategy is general and feature-agnostic, allowing COLLAGE to combine and leverage any number of subsets selected by any retrieval heuristic or method, and to identify which subset provides the most benefit for the target task. In extensive experiments, COLLAGE outperforms state-of-the-art retrieval and multi-task learning approaches, achieving a 5.1% improvement over the best baseline in simulation across 10 tasks, and a 16.6% improvement in the real world across 6 tasks. For our real world experiments, we include data selection from the large-scale, real-world DROID dataset, significantly improving few-shot imitation policy training.
-  </p>
-</div>
+          <p>
+            In this work, we study the problem of data retrieval for few-shot imitation learning: selecting data from a large dataset to train a performant policy for a specific task, given only a few target demonstrations. Prior methods retrieve data using a single-feature distance heuristic, assuming that the best demonstrations are those that most closely resemble the target examples in visual, semantic, or motion space. However, this approach captures only a subset of the relevant information and is prone to introducing detrimental demonstrations, such as those from unrelated tasks with similar scene layouts or tasks with similar motion but divergent goals.
+          </p>
+          <p>
+            We present <strong>COLLAGE</strong>, a method for <strong>COLL</strong>ective data <strong>AG</strong>gr<strong>E</strong>gation in few-shot imitation learning that uses an adaptive late fusion mechanism to guide the selection of relevant demonstrations based on a task-specific combination of multiple cues. COLLAGE assigns weights to subsets of the dataset pre-selected using single-feature retrieval (e.g., appearance, shape, or language similarity), based on how well a policy trained on each subset predicts the few target demonstrations. These weights are then used during training to importance-sample data across the retrieved subsets. This strategy is general, feature-agnostic, and flexible, enabling COLLAGE to leverage complementary information and outperform both single-modality and multitask baselines. In extensive experiments, COLLAGE improves average performance by 5.1% in simulation (LIBERO-10) and 16.6% in real-world tasks from the DROID dataset.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -53,8 +53,26 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Experiments</h2>
-        <div class="content has-text-centered">
-          <p><em>Coming soon.</em></p>
+        <div class="content">
+
+          <h3 class="title is-4">Simulated Experiments</h3>
+          <div style="text-align: center;">
+            <img src="./static/images/sim_results.png" alt="Simulated experiment results"
+                 style="width: 100%; max-width: 1600px; height: auto; display: block; margin: 0 auto;">
+            <p class="has-text-justified" style="max-width: 1200px; margin: 0 auto;">
+              Simulated evaluation on the LIBERO-10 benchmark. COLLAGE achieves a 5.1% improvement in average success rate over the strongest single-modality baseline (DINO) and an 8.4% gain over FLOW. By adaptively combining retrievals from diverse modalities, it consistently outperforms prior retrieval methods and multitask policies across 10 tasks.
+            </p>
+          </div>
+
+          <h3 class="title is-4" style="margin-top: 2em;">Real-World Experiments</h3>
+          <div style="text-align: center;">
+            <img src="./static/images/real_world_results.png" alt="Real-world experiment results"
+                 style="width: 100%; max-width: 1600px; height: auto; display: block; margin: 0 auto;">
+            <p class="has-text-justified" style="max-width: 1200px; margin: 0 auto;">
+              Real-world results across six manipulation tasks using the DROID dataset. Despite substantial domain shift, COLLAGE achieves an average success rate of 6.83/15, significantly outperforming the best single-modality method (LANG: 4.16/15) and STRAP (4.33/15). This demonstrates COLLAGE’s ability to generalize effectively by leveraging complementary retrievals across modalities.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -65,7 +83,8 @@
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        This website is based on the <a href="https://nerfies.github.io/">Nerfies</a> website template, which is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        This website is based on the <a href="https://nerfies.github.io/">Nerfies</a> website template, which is licensed under a
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
       </p>
     </div>
   </div>
