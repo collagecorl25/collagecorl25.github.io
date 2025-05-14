@@ -1,94 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="COLLAGE enables task-adaptive multi-feature data retrieval for few-shot imitation learning.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="COLLAGE enables task-adaptive multi-feature data retrieval for few-shot imitation learning." />
   <title>COLLAGE: Adaptive Fusion-based Retrieval for Augmented Policy Learning</title>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
 </head>
 <body>
-
-<section class="hero">
-  <div class="hero-body">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">COLLAGE: Adaptive Fusion-based Retrieval for Augmented Policy Learning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Authors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">COLLAGE: Adaptive Fusion-based Retrieval for Augmented Policy Learning</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Anonymous Authors</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            In this work, we study the problem of data retrieval for few-shot imitation learning: selecting data from a large dataset to train a performant policy for a specific task, given only a few target demonstrations. Prior methods retrieve data using a single-feature distance heuristic, assuming that the best demonstrations are those that most closely resemble the target examples in visual, semantic, or motion space. However, this approach captures only a subset of the relevant information and is prone to introducing detrimental demonstrations, such as those from unrelated tasks with similar scene layouts or tasks with similar motion but divergent goals.
-          </p>
-          <p>
-            We present <strong>COLLAGE</strong>, a method for <strong>COLL</strong>ective data <strong>AG</strong>gr<strong>E</strong>gation in few-shot imitation learning that uses an adaptive late fusion mechanism to guide the selection of relevant demonstrations based on a task-specific combination of multiple cues. COLLAGE assigns weights to subsets of the dataset pre-selected using single-feature retrieval (e.g., appearance, shape, or language similarity), based on how well a policy trained on each subset predicts the few target demonstrations. These weights are then used during training to importance-sample data across the retrieved subsets. This strategy is general, feature-agnostic, and flexible, enabling COLLAGE to leverage complementary information and outperform both single-modality and multitask baselines. In extensive experiments, COLLAGE improves average performance by 5.1% in simulation (LIBERO-10) and 16.6% in real-world tasks from the DROID dataset.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Experiments</h2>
-        <div class="content">
-
-          <h3 class="title is-4">Simulated Experiments</h3>
-          <div style="text-align: center;">
-            <img src="./static/images/sim_results.png" alt="Simulated experiment results"
-                 style="width: 100%; max-width: 1600px; height: auto; display: block; margin: 0 auto;">
-            <p class="has-text-justified" style="max-width: 1200px; margin: 0 auto;">
-              Simulated evaluation on the LIBERO-10 benchmark. COLLAGE achieves a 5.1% improvement in average success rate over the strongest single-modality baseline (DINO) and an 8.4% gain over FLOW. By adaptively combining retrievals from diverse modalities, it consistently outperforms prior retrieval methods and multitask policies across 10 tasks.
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this work, we study the problem of data retrieval for few-shot imitation learning: selecting data from a large dataset to train a performant policy for a specific task, given only a few target demonstrations. Prior methods retrieve data using a single-feature distance heuristic, assuming that the best demonstrations are those that most closely resemble the target examples in visual, semantic, or motion space. However, this approach captures only a subset of the relevant information and is prone to introducing detrimental demonstrations, such as those from unrelated tasks with similar scene layouts or tasks with similar motion but divergent goals.
+            </p>
+            <p>
+              We present <strong>COLLAGE</strong>, a method for <strong>COLL</strong>ective data <strong>AG</strong>gr<strong>E</strong>gation in few-shot imitation learning that uses an adaptive late fusion mechanism to guide the selection of relevant demonstrations based on a task-specific combination of multiple cues. COLLAGE assigns weights to subsets of the dataset pre-selected using single-feature retrieval (e.g., appearance, shape, or language similarity), based on how well a policy trained on each subset predicts the few target demonstrations. These weights are then used during training to importance-sample data across the retrieved subsets. This strategy is general, feature-agnostic, and flexible, enabling COLLAGE to leverage complementary information and outperform both single-modality and multitask baselines. In extensive experiments, COLLAGE improves average performance by 5.1% in simulation (LIBERO-10) and 16.6% in real-world tasks from the DROID dataset.
             </p>
           </div>
-
-          <h3 class="title is-4" style="margin-top: 2em;">Real-World Experiments</h3>
-          <div style="text-align: center;">
-            <img src="./static/images/real_world_results.png" alt="Real-world experiment results"
-                 style="width: 100%; max-width: 1600px; height: auto; display: block; margin: 0 auto;">
-            <p class="has-text-justified" style="max-width: 1200px; margin: 0 auto;">
-              Real-world results across six manipulation tasks using the DROID dataset. Despite substantial domain shift, COLLAGE achieves an average success rate of 6.83/15, significantly outperforming the best single-modality method (LANG: 4.16/15) and STRAP (4.33/15). This demonstrates COLLAGE’s ability to generalize effectively by leveraging complementary retrievals across modalities.
-            </p>
-          </div>
-
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        This website is based on the <a href="https://nerfies.github.io/">Nerfies</a> website template, which is licensed under a
-        <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-      </p>
+  </section>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Real-World Rollouts</h2>
+      <div class="glide" style="position: relative;">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="video-block">
+                <div class="video-card">
+                  <video autoplay muted loop playsinline controls>
+                    <source src="./static/videos/fixed_demo1.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <p class="video-caption">Pick-Umbrella</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">‹</button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">›</button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experiments</h2>
+          <div class="content">
+            <h3 class="title is-4">Simulated Experiments</h3>
+            <figure class="image">
+              <img src="./static/images/sim_results.png" alt="Simulated experiment results" />
+              <figcaption>
+                Simulated task performance on LIBERO-10. COLLAGE improves average success by 5.1% over the best single-modality baseline (DINO), and by 8.4% over FLOW.
+              </figcaption>
+            </figure>
 
+            <h3 class="title is-4" style="margin-top: 1.5em;">Real-World Experiments</h3>
+            <figure class="image">
+              <img src="./static/images/real_world_results.png" alt="Real-world experiment results" />
+              <figcaption>
+                Real-world evaluation on six manipulation tasks using the DROID dataset. COLLAGE achieves 6.83/15 average success, outperforming STRAP (4.33/15) and LANG (4.16/15).
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          This website is based on the <a href="https://nerfies.github.io/">Nerfies</a> website template,
+          licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      new Glide('.glide', {
+        type: 'carousel',
+        rewind: false,
+        perView: 3,
+        focusAt: 'center',
+        gap: 24,
+        breakpoints: {
+          1024: { perView: 2 },
+          768: { perView: 1 }
+        }
+      }).mount();
+    });
+  </script>
 </body>
 </html>
