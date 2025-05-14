@@ -136,7 +136,7 @@
             <figure class="image">
               <img src="./static/images/sim_results.png" alt="Simulated experiment results" />
               <figcaption>
-                Simulated task performance on LIBERO-10. COLLAGE improves average success by 5.1% over the best single-modality baseline (DINO), and by 8.4% over FLOW.
+                Simulated task performance on LIBERO-10. COLLAGE achieves a 10.75% relative performance improvement over the prior state-of-the-art retrieval method STRAP (ICLR ’25). It also outperforms other single-modality retrievals including Language (LANG) by 25.31%, Flow (FLOW) by 19.95%, and Shape (SHAPE) by 14.25%.
               </figcaption>
             </figure>
 
@@ -144,7 +144,7 @@
             <figure class="image">
               <img src="./static/images/real_world_results.png" alt="Real-world experiment results" />
               <figcaption>
-                Real-world evaluation on six manipulation tasks using the DROID dataset. COLLAGE achieves 6.83/15 average success, outperforming STRAP (4.33/15) and LANG (4.16/15).
+                Real-world evaluation on six manipulation tasks using the DROID dataset. For each task, we use only 5 target demonstrations and retrieve from a pool of 30k successful episodes. COLLAGE achieves an average success rate of 6.83/15, representing a 58% improvement over STRAP (4.33/15) and a 64% improvement over LANG (4.16/15). Policies trained solely on the 5 in-domain demonstrations (no retrieval) achieve only 1.00/15 success on average. In contrast, COLLAGE effectively leverages relevant demonstrations from DROID to significantly boost policy performance.
               </figcaption>
             </figure>
           </div>
