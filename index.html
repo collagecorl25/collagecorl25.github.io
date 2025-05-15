@@ -25,6 +25,8 @@
       </div>
     </div>
   </section>
+
+  <!-- Abstract -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -42,73 +44,39 @@
       </div>
     </div>
   </section>
+
+  <!-- Method Overview -->
+  <section class="section">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Method Overview</h2>
+      <figure class="image">
+  <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 8px;">
+    <source src="./static/images/method_overview.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <figcaption class="method-caption">
+  <strong>Overview of COLLAGE.</strong>
+  <strong>Left:</strong> Given a set of target demonstrations, each modality (e.g., visual, motion, shape, or language) retrieves a set of similar (sub)-trajectories from a prior dataset of diverse demonstrations.
+  <strong>Center:</strong> We train a reference policy on each modality’s retrieved set and compute how well that policy predicts the target demonstrations. This prediction performance is used to estimate the importance weight of each modality. 
+   <strong>Right:</strong> We train the final policy using all retrieved data, sampling more frequently from modalities with higher weights.
+  </figcaption>
+</figure>
+    </div>
+  </section>
+
+  <!-- Rollout Carousel -->
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Policy Rollouts with COLLAGE</h2>
       <div class="glide" style="position: relative;">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <li class="glide__slide">
-              <div class="video-block">
-                <div class="video-card">
-                  <video autoplay muted loop playsinline controls>
-                    <source src="./static/videos/demo_pen_in_cup.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <p class="video-caption">Pen-Cup</p>
-              </div>
-            </li>
-             <li class="glide__slide">
-              <div class="video-block">
-                <div class="video-card">
-                  <video autoplay muted loop playsinline controls>
-                    <source src="./static/videos/demo_chips_real.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <p class="video-caption">Chips</p>
-              </div>
-            </li>
-             <li class="glide__slide">
-              <div class="video-block">
-                <div class="video-card">
-                  <video autoplay muted loop playsinline controls>
-                    <source src="./static/videos/demo_umbrella.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <p class="video-caption">Umbrella</p>
-              </div>
-            </li>
-             <li class="glide__slide">
-              <div class="video-block">
-                <div class="video-card">
-                  <video autoplay muted loop playsinline controls>
-                    <source src="./static/videos/demo_spatula.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <p class="video-caption">Stir-Spatula</p>
-              </div>
-            </li>
-            <li class="glide__slide">
-              <div class="video-block">
-                <div class="video-card">
-                  <video autoplay muted loop playsinline controls>
-                    <source src="./static/videos/demo_lego.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <p class="video-caption">Lego</p>
-              </div>
-            </li>
-             <li class="glide__slide">
-              <div class="video-block">
-                <div class="video-card">
-                  <video autoplay muted loop playsinline controls>
-                    <source src="./static/videos/demo_scrub.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <p class="video-caption">Scrub</p>
-              </div>
-            </li>
-
+            <li class="glide__slide"><div class="video-block"><div class="video-card"><video autoplay muted loop playsinline controls><source src="./static/videos/demo_pen_in_cup.mp4" type="video/mp4" /></video></div><p class="video-caption">Pen-Cup</p></div></li>
+            <li class="glide__slide"><div class="video-block"><div class="video-card"><video autoplay muted loop playsinline controls><source src="./static/videos/demo_chips_real.mp4" type="video/mp4" /></video></div><p class="video-caption">Chips</p></div></li>
+            <li class="glide__slide"><div class="video-block"><div class="video-card"><video autoplay muted loop playsinline controls><source src="./static/videos/demo_umbrella.mp4" type="video/mp4" /></video></div><p class="video-caption">Umbrella</p></div></li>
+            <li class="glide__slide"><div class="video-block"><div class="video-card"><video autoplay muted loop playsinline controls><source src="./static/videos/demo_spatula.mp4" type="video/mp4" /></video></div><p class="video-caption">Stir-Spatula</p></div></li>
+            <li class="glide__slide"><div class="video-block"><div class="video-card"><video autoplay muted loop playsinline controls><source src="./static/videos/demo_lego.mp4" type="video/mp4" /></video></div><p class="video-caption">Lego</p></div></li>
+            <li class="glide__slide"><div class="video-block"><div class="video-card"><video autoplay muted loop playsinline controls><source src="./static/videos/demo_scrub.mp4" type="video/mp4" /></video></div><p class="video-caption">Scrub</p></div></li>
           </ul>
         </div>
         <div class="glide__arrows" data-glide-el="controls">
@@ -119,13 +87,15 @@
           <button class="glide__bullet" data-glide-dir="=0"></button>
           <button class="glide__bullet" data-glide-dir="=1"></button>
           <button class="glide__bullet" data-glide-dir="=2"></button>
-            <button class="glide__bullet" data-glide-dir="=3"></button>
+          <button class="glide__bullet" data-glide-dir="=3"></button>
           <button class="glide__bullet" data-glide-dir="=4"></button>
           <button class="glide__bullet" data-glide-dir="=5"></button>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Experiments -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -136,7 +106,7 @@
             <figure class="image">
               <img src="./static/images/sim_results.png" alt="Simulated experiment results" />
               <figcaption>
-                Simulated task performance on LIBERO-10. COLLAGE achieves a 10.75% relative performance improvement over the prior state-of-the-art retrieval method STRAP (ICLR ’25). It also outperforms other single-modality retrievals, including Shape (SHAPE) by 14.25% and Language (LANG) by 25.31%.
+                We evaluate COLLAGE on all tasks from the LIBERO-10 benchmark. COLLAGE achieves a 10.75% relative performance improvement over the prior state-of-the-art retrieval method STRAP (ICLR ’25). It also outperforms other single-modality retrievals, including Shape (SHAPE) by 14.25% and Language (LANG) by 25.31%.
               </figcaption>
             </figure>
 
@@ -152,6 +122,8 @@
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
@@ -162,6 +134,8 @@
       </div>
     </div>
   </footer>
+
+  <!-- Glide JS -->
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
   <script>
     window.addEventListener('load', function () {

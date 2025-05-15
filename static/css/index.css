@@ -74,3 +74,12 @@ html, body {
 .glide__bullet--active {
   background: #333;
 }
+
+
+.method-caption {
+  max-width: 960px;
+  margin: 1.5rem auto 0 auto;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+}
