@@ -56,8 +56,7 @@
   </video>
   <figcaption class="method-caption">
   <strong>Overview of COLLAGE.</strong>
-  <strong>Left:</strong> Given a set of target demonstrations, each modality (e.g., visual, motion, shape, or language) retrieves a set of similar (sub)-trajectories from a prior dataset of diverse demonstrations.
-  <strong>Center:</strong> We train a reference policy on each modality’s retrieved set and compute how well that policy predicts the target demonstrations. This prediction performance is used to estimate the importance weight of each modality. 
+  <strong>Left:</strong> Given a set of target demonstrations, each modality (e.g., visual, motion, shape, or language) retrieves a set of similar (sub)-trajectories from a prior dataset of diverse demonstrations. <strong>Center:</strong> We use the retrieved trajectories for each modality to train a reference policy. For each reference policy, we compute the log-likelihood of the target trajectories — that is, how well the policy predicts the target actions at each target state. These log-likelihoods are used to assign importance weights to the modalities. 
    <strong>Right:</strong> We train the final policy using all retrieved data, sampling more frequently from modalities with higher weights.
   </figcaption>
 </figure>
